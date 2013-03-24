@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ember Tag</title>
+    <link href="css/jquery.tagsinput.css" type="text/css" rel="stylesheet">
+    <link href="css/jquery-ui.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<script type="text/x-handlebars">
+		<div class="tagsinput" id="tags_1_tagsinput" style="width: auto; min-height: 100px; height: 100px;">
+			{{#each Tags.Controller.tags itemController="tag"}}
+             	<span class="tag">
+             		<span id="{{id}}">{{title}}&nbsp;&nbsp;</span><a href="#" title="Removing tag" {{action "removeTag"}}>x</a>
+         		</span>
+            {{/each}}
+		
+			<div id="tags_1_addTag">
+				{{view Tags.CreateTagView id="new-tag" placeholder="add a tag" style="color: rgb(102, 102, 102); width: 68.3333px;"}}
+			</div>
+			<div class="tags_clear"></div>
+		</div>
+	</script>
+	<script src="js/libs/jquery.js"></script>
+	<script src="js/libs/handlebars.js"></script>
+	<script src="js/libs/id.js"></script>
+    <script src="js/libs/ember.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
